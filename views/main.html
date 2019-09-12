@@ -1,0 +1,42 @@
+<div class="col-md-10 col-md-offset-1">
+
+  <div class="page-header">
+    <h1>Star Wars</h1>
+  </div>
+  <div>
+    <span>
+      <h3>Search <input type="text" ng-model="search"></h3>
+    </span>
+  </div>
+
+  <div class="panel panel-default" ng-repeat="person in data | filter: search">
+    <div class="panel-heading">
+      <span>{{ person.name }}</span>
+    </div>
+  </div>
+  <hr>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <ng-content>Age Difference between the yongest and oldest character : </ng-content><span
+        ng-bind="ageDiff(data)">{{diff}}</span>
+    </div>
+
+  </div>
+  <hr>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <ng-content>Average Heigth of characters : </ng-content><span ng-bind="avgHeight(data)">{{averageHeight}}</span>
+    </div>
+
+  </div>
+  <hr>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <ng-content>eye color distribution of characters : </ng-content><span
+        ng-bind="eyeColor(data)">{{eyecolorArr}}</span>
+    </div>
+
+  </div>
+
+
+</div>
